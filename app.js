@@ -9,7 +9,7 @@ let usersRouter = require('./routes/users');
 let accountModifyRouter = require('./routes/account-modify');
 let accountsRouter = require('./routes/accounts');
 let addProductRouter = require('./routes/add-product');
-let productsRouter = require('./routes/account-modify');
+let productsRouter = require('./routes/products');
 let recentOrdersRouter = require('./routes/recent-orders');
 let revenuesRouter = require('./routes/revenues');
 
