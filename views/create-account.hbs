@@ -1,0 +1,52 @@
+<!--================Create Account Box Area =================-->
+	<section class="login_box_area p_120">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+						<h3>Tạo tài khoản admin</h3>
+						{{#if hasErrors}}
+            				<div class="alert alert-danger login_form">
+                				{{#each errorMessages }}
+                    				<p>{{this.msg}}</p>
+               					{{/each}}
+            				</div>
+						{{else}}
+							{{#if hasSuccess}}
+							<div class="alert alert-success login_form">
+								{{#each successMessages }}
+                    				<p>{{this.msg}}</p>
+               					{{/each}}		
+            				</div>
+							{{/if}}
+       					{{/if}}
+						<form class="row login_form" action="create-account" method="post" id="contactForm" novalidate="novalidate">
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="username" name="username" placeholder="Tên tài khoản">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Họ tên">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Địa chỉ email">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="password" class="form-control" id="password2" name="password2" placeholder="Xác nhận mật khẩu">
+							</div>
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="btn submit_btn">Tạo tài khoản</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-4">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
