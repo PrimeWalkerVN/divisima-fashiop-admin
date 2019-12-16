@@ -5,4 +5,5 @@ const router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('add-product',{title:"Thêm sản phẩm"});
 });
+
 module.exports = router;
