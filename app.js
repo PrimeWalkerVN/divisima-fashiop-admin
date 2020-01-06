@@ -8,6 +8,7 @@ let indexRouter = require('./routes/index');
 let adminsRouter = require('./routes/admins');
 let accountModifyRouter = require('./routes/account-modify');
 let accountsRouter = require('./routes/accounts');
+let adminAccountsRouter = require('./routes/admin-accounts');
 let addProductRouter = require('./routes/add-product');
 let productsRouter = require('./routes/products');
 let recentOrdersRouter = require('./routes/recent-orders');
@@ -15,7 +16,7 @@ let revenuesRouter = require('./routes/revenues');
 let mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(process.env.DB_URL_LOCAL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 let db = mongoose.connection;
 db.on('error',console.error.bind(console, 'MongoDB connection error.....'));
 
@@ -72,6 +73,7 @@ app.use('/index', indexRouter);
 app.use('/admins', adminsRouter);
 app.use('/account-modify',accountModifyRouter);
 app.use('/accounts',accountsRouter);
+app.use('/admin-accounts',adminAccountsRouter);
 app.use('/add-product',addProductRouter);
 app.use('/products',productsRouter);
 app.use('/recent-orders',recentOrdersRouter);

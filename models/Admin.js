@@ -26,6 +26,9 @@ const AdminSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: String
+    },
+    status: {
+        type: String
     }
 
 });

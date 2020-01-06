@@ -2,9 +2,9 @@
 let Admin = require('../models/Admin');
 const bcrypt = require('bcryptjs');
 let mongoose = require('mongoose');
-//let baseUrl = "mongodb+srv://letrungtiennbk9:Trungtienle9@cluster0-hjpbg.mongodb.net/shopping?retryWrites=true&w=majority"
+let baseUrl = "mongodb+srv://letrungtiennbk9:Trungtienle9@cluster0-hjpbg.mongodb.net/shopping?retryWrites=true&w=majority"
 
-let baseUrl = "mongodb://localhost:27017/shopping"
+//let baseUrl = "mongodb://localhost:27017/shopping"
 let mongoDB = baseUrl;
 let done = 0;
 
@@ -12,9 +12,9 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const superAdmin =
     new Admin ({
-        username: 'admin',
-        name: 'Cẩm Tú',
-        email: 'thanhbuscu@gmail.com',
+        username: 'thong',
+        name: 'Thông',
+        email: 'thong@gmail.com',
         isSuperAdmin: true,
         password:'123123123'
 });

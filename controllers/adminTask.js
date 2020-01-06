@@ -93,7 +93,8 @@ exports.postCreateAccount= (req, res) => {
                         username,
                         name,
                         email,
-                        password
+                        password,
+                        status: "Hoạt động"
                     });
                     //Hash password
                     bcrypt.genSalt(10, (err, salt) =>
