@@ -1,0 +1,160 @@
+<!-- ============================================================== -->
+<!-- basic form  -->
+<!-- ============================================================== -->
+<h1>Chỉnh sửa sản phẩm</h1>
+<div class="row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+		<div class="card">
+			<div class="card-body">
+				<div>
+					<div class="form-group">
+						<label>Tên sản phẩm</label>
+						<input id="inputText3" type="text" value='{{productData.title}}' class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="inputText4" class="col-form-label">Giá sản phẩm</label>
+						<input id="inputText4" type="number" value={{productData.price}} class="form-control" placeholder="">
+					</div>
+					<div class="form-group">
+						<label class="col-form-label">Nhãn hiệu</label>
+						<select class="form-control" id="input-select-brand" onload="dc.activeBrandOptions();">
+							<option>Gucci</option>
+							<option>H&M</option>
+							<option>Pull&Bear</option>
+							<option>Mango</option>
+							<option>Routine</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="col-form-label">Gian hàng</label>
+						<select class="form-control" id="input-select-type">
+							<option>Áo len</option>
+							<option>Áo thun</option>
+							<option>Áo lót</option>
+							<option>Áo sơ mi</option>
+							<option>Áo khoác</option>
+							<option>Quần tây</option>
+							<option>Quần thể thao</option>
+							<option>Quần jogger</option>
+							<option>Váy</option>
+							<option>Đầm</option>
+							<option>Sneaker</option>
+							<option>Giày cao cổ</option>
+							<option>Giày cao gót</option>
+						</select>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-form-label">Màu sắc chủ đạo</label>
+						<div class="fw-color-choose" id="input-select-color">
+							<div class="cs-item">
+								<input value="Hồng mạnh mẽ" type="radio" name="cs" id="pink-color" checked>
+								<label class="cs-pink" for="pink-color">
+								</label>
+							</div>
+							<div class="cs-item">
+								<input value="Vàng gold" type="radio" name="cs" id="yellow-color">
+								<label class="cs-yellow" for="yellow-color">
+								</label>
+							</div>
+							<div class="cs-item">
+								<input value="Trắng" type="radio" name="cs" id="white-color">
+								<label class="cs-white" for="white-color">
+								</label>
+							</div>
+							<div class="cs-item">
+								<input value="Đen" type="radio" name="cs" id="black-color">
+								<label class="cs-black" for="black-color">
+								</label>
+							</div>
+							<div class="cs-item">
+								<input value="Xanh da trời" type="radio" name="cs" id="blue-color">
+								<label class="cs-blue" for="blue-color">
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div id="preview-img-placeholder"></div>
+
+					<div class="custom-file mb-3">
+						<input type="file" class="custom-file-input" id="customFile">
+						<label class="custom-file-label" for="customFile">Chọn hình ảnh cho sản phẩm</label>
+					</div>
+
+					<div id="error-dialogue" role="alert">
+
+					</div>
+
+					<div class="form-group">
+						<div id="product-id" style="width: 0px; height: 0px; overflow:hidden" >{{productData._id}}</div>
+						<button id="modify-product" class="btn btn-primary" type="submit">Lưu thay đổi</button>
+						<a href="/products" class="btn btn-outline-light">Hủy bỏ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ============================================================== -->
+<!-- end basic form  -->
+<!-- ============================================================== -->
+
+<div class="footer">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+				Copyright © 2018 Concept. Mọi bản quyền được bảo hộ. Template phát triển bởi <a
+					href="https://colorlib.com/wp/">Colorlib</a>.
+			</div>
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="text-md-right footer-links d-none d-sm-block">
+					<a href="javascript: void(0);">Về chúng tôi</a>
+					<a href="javascript: void(0);">Hỗ trợ</a>
+					<a href="javascript: void(0);">Liên hệ</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ============================================================== -->
+<!-- end main wrapper -->
+<!-- ===============================F=============================== -->
+<!-- Optional JavaScript -->
+<script src="/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/javascripts/main-js.js"></script>
+<script src="/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+
+<script>
+	$('#input-select-brand option').each(function () {
+		if ($(this)[0].label == '{{productData.brand}}') {
+			$(this).attr('selected', true);
+		}
+	});
+
+	$('#input-select-type option').each(function () {
+		if ($(this)[0].label == '{{productData.typeProduct}}') {
+			$(this).attr('selected', true);
+		}
+	});
+
+	$('#input-select-color input').each(function () {
+		if ($(this)[0].value == '{{productData.color}}') {
+			$(this).attr('checked', true);
+		}
+	});
+
+	$('#preview-img-placeholder')
+		.append('<img id="blah" alt="your image" width="100px" height="100px"/>');
+	$('#blah').attr('src', '{{productData.imagePath}}');
+	$('#blah').css('margin-bottom', '20px');
+
+</script>
+
+</body>
+
+</html>

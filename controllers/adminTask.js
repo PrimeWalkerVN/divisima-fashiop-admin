@@ -124,12 +124,13 @@ exports.postCreateAccount= (req, res) => {
 
 
 //handle admin already logged in or not
-exports.isLoggedIn = function(req, res, next) {
+module.exports.isLoggedIn = function(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
     res.redirect('/admins/login');
 }
+
 exports.notLoggedIn = function (req, res, next) {
     if (!req.isAuthenticated()) {
         return next();

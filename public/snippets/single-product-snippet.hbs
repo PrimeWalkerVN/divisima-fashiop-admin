@@ -1,0 +1,21 @@
+<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12 f_p_item">
+  <div class="product-thumbnail">
+    <div class="product-img-head">
+      <div class="product-img">
+        <img src={{imagePath}} alt="" class="img-fluid" style="height: 300px !important;"></div>
+    </div>
+    <div class="product-content">
+      <div class="product-content-head">
+        <div class="" style="margin-bottom:10px; height: 2.2em;line-height: 1.1em;overflow: auto;">
+          {{title}}
+        </div>
+        <div class="">{{price}}</div>
+      </div>
+      <div class="product-btn">
+        <a href={{_id}} class="btn btn-primary">Chỉnh sửa</a>
+        <button id="delete-product" onclick="dc.deleteItem('{{_id}}');">Xóa</button>
+      </div>
+      <div id='product-id' style="width: 0em; height:0em; overflow: hidden;">{{_id}}</div>
+    </div>
+  </div>
+</div>

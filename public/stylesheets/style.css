@@ -2401,8 +2401,8 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
     top: 15px;}
     .product-wishlist-btn:hover{border-color: #ff3367; color: #ff3367;transition: 0.3s ease;}
     .product-wishlist-btn.active{border-color: #ff3367; color: #ff3367;transition: 0.3s ease;}
-.product-content{ border-top:1px solid #e6e6f2; padding: 23px;}
-.product-content-head{ position: relative; margin-bottom: 25px; }
+.product-content{ border-top:1px solid #e6e6f2; padding: 10px;}
+.product-content-head{ position: relative; margin-bottom: 10px; }
 .product-title{font-size: 16px; margin-bottom: 5px;}
 .product-rating{font-size: 12px;
 
@@ -6834,7 +6834,8 @@ form.dropzone {
 	border-radius: 50px;
 	background: #333;
 	position: relative;
-	cursor: pointer;
+    cursor: pointer;
+    border: 1px solid #ff0088;
 }
 
 .fw-color-choose label.cs-gray {
@@ -6859,6 +6860,22 @@ form.dropzone {
 
 .fw-color-choose label.cs-blue {
 	background: #9ee7f4;
+}
+
+.fw-color-choose label.cs-black {
+	background: #333333;
+}
+
+.fw-color-choose label.cs-white {
+	background: #ffffff;
+}
+
+.fw-color-choose label.cs-pink {
+	background: #ff5ac8;
+}
+
+.fw-color-choose label.cs-yellow {
+	background: #fcff67;
 }
 
 .fw-color-choose label span {
