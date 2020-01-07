@@ -5,13 +5,6 @@ const apiUrl = 'https://still-plateau-02404.herokuapp.com/';
 const request = require('request');
 
 /* GET home page. */
-router.get('/',adminTask.isLoggedIn, function(req, res, next) {
-  request(apiUrl + 'topTen', { json: true }, (err, rspnd, body) => {
-    for(let i=0; i<body.length; i++){
-      body[i].revenue = body[i].price * body[i].sold;
-    }
-    res.render('index', { title: "Top bán chạy", topTen: body });
-  });
-});
+router.get('/',adminTask.isLoggedIn, adminTask.loadHomePage);
 
 module.exports = router;

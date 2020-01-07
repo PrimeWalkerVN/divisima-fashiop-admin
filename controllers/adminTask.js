@@ -2,6 +2,19 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const Admin = require('../models/Admin');
 const validator = require("email-validator");
+const request = require('request');
+const apiUrl = 'https://still-plateau-02404.herokuapp.com/';
+
+
+//load home page 
+exports.loadHomePage = function(req, res, next) {
+    request(apiUrl + 'topTen', { json: true }, (err, rspnd, body) => {
+      for(let i=0; i<body.length; i++){
+        body[i].revenue = body[i].price * body[i].sold;
+      }
+      res.render('index', { title: "Top bán chạy", topTen: body });
+    });
+};
 
 //method get,post for login user 
 exports.getSignIn = function(req, res) 
@@ -119,6 +132,24 @@ exports.postCreateAccount= (req, res) => {
                 }
             });
     }
+};
+
+//method get post account modify
+exports.getAccountModify = async function(req, res, next) {
+    await Admin.findById(req.user._id, function(err, user) {
+      console.log(user);
+      res.render('account-modify',{title:'Chỉnh sửa tài khoản', user});
+    })
+};
+exports.postAccountModify =  async function(req, res){
+    console.log(req.body.name);
+    Admin.findOneAndUpdate({_id: req.user._id},
+      {$set: {name:req.body.name, email: req.body.email, 
+      address:req.body.address, phoneNumber:req.body.phoneNumber}},
+      (err,data) => {
+        if(err) res.send(500,message);
+        res.redirect('/account-modify');
+      })
 };
 
 

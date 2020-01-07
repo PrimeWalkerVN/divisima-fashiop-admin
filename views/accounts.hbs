@@ -14,8 +14,6 @@
                                                 <th>Id</th>
                                                 <th>Tên tài khoản</th>
                                                 <th>Email</th>
-                                                <th>Ngày lập</th>
-                                                <th>Đã mua</th>
                                                 <th>Trạng thái</th>
                                                 <th>Thao tác</th>
                                             </tr>
@@ -26,8 +24,6 @@
                                                 <td>{{this._id}}</td>
                                                 <td>{{this.username}}</td>
                                                 <td>{{this.email}}</td>
-                                                <td>2011/04/25</td>
-                                                <td>5.150.000đ</td>
                                                 <td>{{this.status}}</td>
                                                 {{#ifCond this.status '==' "Hoạt động"}}
                                                     <td><button class="btn btn-primary" type="button" onclick="location.href='accounts/lock-user/{{this._id}}'">Khóa</button></td>
