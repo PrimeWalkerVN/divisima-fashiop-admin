@@ -15,24 +15,22 @@
                                                 <th>Tên tài khoản</th>
                                                 <th>Email</th>
                                                 <th>Ngày lập</th>
-                                                <th>Đã mua</th>
                                                 <th>Trạng thái</th>
                                                 <th>Thao tác</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{#each users}}
+                                            {{#each admins}}
                                                 <tr>
                                                 <td>{{this._id}}</td>
                                                 <td>{{this.username}}</td>
                                                 <td>{{this.email}}</td>
                                                 <td>2011/04/25</td>
-                                                <td>5.150.000đ</td>
                                                 <td>{{this.status}}</td>
                                                 {{#ifCond this.status '==' "Hoạt động"}}
-                                                    <td><button class="btn btn-primary" type="button" onclick="location.href='accounts/lock-user/{{this._id}}'">Khóa</button></td>
+                                                    <td><button class="btn btn-primary" type="button" onclick="location.href='admin-accounts/lock-admin/{{this._id}}'">Khóa</button></td>
                                                 {{else}}
-                                                    <td><button class="btn btn-primary" type="button" onclick="location.href='accounts/unlock-user/{{this._id}}'">Mở khóa</button></td>
+                                                    <td><button class="btn btn-primary" type="button" onclick="location.href='admin-accounts/unlock-admin/{{this._id}}'">Mở khóa</button></td>
                                                 {{/ifCond}}
                                             </tr>
                                             {{/each}}

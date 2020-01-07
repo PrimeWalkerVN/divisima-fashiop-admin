@@ -9,6 +9,7 @@ let indexRouter = require('./routes/index');
 let adminsRouter = require('./routes/admins');
 let accountModifyRouter = require('./routes/account-modify');
 let accountsRouter = require('./routes/accounts');
+let adminAccountsRouter = require('./routes/admin-accounts');
 let productsRouter = require('./routes/products');
 let revenuesRouter = require('./routes/revenues');
 let mongoose = require('mongoose');
@@ -71,6 +72,7 @@ app.use('/index', indexRouter);
 app.use('/admins', adminsRouter);
 app.use('/account-modify',accountModifyRouter);
 app.use('/accounts',accountsRouter);
+app.use('/admin-accounts',adminAccountsRouter);
 app.use('/products',productsRouter);
 app.use('/revenues',revenuesRouter);
 

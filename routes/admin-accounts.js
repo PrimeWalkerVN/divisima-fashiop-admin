@@ -3,45 +3,42 @@ const router = express.Router();
 
 
 const superAdmin = require('../controllers/adminTask');
-const User = require('../models/Users');
+const Admin = require('../models/Admin');
 
 /* GET home page. */
-router.get('/', superAdmin.isLoggedIn, async function(req, res, next) {
-    let users = [];
-    await User.find(function(err,docs) {
+router.get('/', superAdmin.isLoggedIn, superAdmin.isSuperLoggedIn, async function(req, res, next) {
+    let admins = [];
+    await Admin.find({isSuperAdmin: false}, function(err,docs) {
         if(err){
             console.log(err);
         }else{
             if(docs == null){
-                users = [];
+                admins = [];
             }else{
-                users = docs;
+                admins = docs;
             }
-            res.render('accounts',{title: 'Quản lý tài khoản', users});
-        }
-    })
+            res.render('admin-accounts',{title: 'Quản lý tài khoản', admins});
 
-    console.log(users);
-    console.log("hihiaasdsad");
-});
-
-router.get('/lock-user/:id', superAdmin.isLoggedIn, function (req, res){
-   
-    User.findOneAndUpdate({_id: req.params.id},{status: "Khóa"}, function (err){
-        if(err){
-            console.log(err);
-        }else{
-            res.redirect('/accounts');
         }
     })
 });
 
-router.get('/unlock-user/:id', superAdmin.isLoggedIn, function (req, res){
-    User.findOneAndUpdate({_id: req.params.id},{status: "Hoạt động"}, function (err){
+router.get('/lock-admin/:id', superAdmin.isLoggedIn, function (req, res){
+    Admin.findOneAndUpdate({_id: req.params.id},{status: "Khóa"}, function (err){
         if(err){
             console.log(err);
         }else{
-            res.redirect('/accounts');
+            res.redirect('/admin-accounts');
+        }
+    })
+});
+
+router.get('/unlock-admin/:id', superAdmin.isLoggedIn, function (req, res){
+    Admin.findOneAndUpdate({_id: req.params.id},{status: "Hoạt động"}, function (err){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/admin-accounts');
         }
     })
 });
@@ -75,4 +72,5 @@ hbs.registerHelper('ifCond', function (v1, operator, v2, options) {
             return options.inverse(this);
     }
 });
+
 module.exports = router;
