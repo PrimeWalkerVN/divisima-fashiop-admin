@@ -1,4 +1,4 @@
-let apiUrl = 'http://localhost:8080/';
+let apiUrl = 'https://still-plateau-02404.herokuapp.com/';
 
 let nItems = 5;
 let nLoaded = 0;
@@ -60,7 +60,7 @@ activePageNum = (pageNum) => {
 }
 
 
-let loadMoreNew = (nPage) => {
+loadMoreNew = (nPage) => {
   activePageNum(nPage);
 
   (async () => {
@@ -283,7 +283,7 @@ $("#customFile").change(function () {
 });
 
 $(document).ready(async () => {
-  await loadMoreNew(1);
+  loadMoreNew(1);
 });
 
 $('.type-filter input').click(filter);

@@ -148,6 +148,8 @@
 		}
 	});
 
+	$('#customFile')[0].value = '{{productData.imagePath}}';
+
 	$('#preview-img-placeholder')
 		.append('<img id="blah" alt="your image" width="100px" height="100px"/>');
 	$('#blah').attr('src', '{{productData.imagePath}}');

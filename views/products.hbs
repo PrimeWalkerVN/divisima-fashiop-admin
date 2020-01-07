@@ -11,10 +11,11 @@
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<nav aria-label="Page navigation example">
 					<ul class="pagination">
-						<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
 						<li class="page-item"><a class="page-link " href="#">2</a></li>
 						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
 						<li class="page-item"><a class="page-link" href="#">Next</a></li>
 					</ul>
 				</nav>
@@ -27,7 +28,7 @@
 			</div>
 			<div class="product-sidebar-widget">
 				<h4 class="product-sidebar-widget-title">Tên sản phẩm</h4>
-				<input type="text" name="" class="search-txt">
+				<input style="width: 100%;" type="text" name="" class="search-txt">
 				<div style="margin-top:5px; text-align: center;"><button class="title-filter">Tìm</button></div>
 			</div>
 			<div class="product-sidebar-widget type-filter">
@@ -147,21 +148,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="product-sidebar-widget price-filter">
-				<h4 class="product-sidebar-widget-title">Giá</h4>
-				<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" id="price-1">
-					<label class="custom-control-label" for="price-1">Dưới 1.000.000</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" id="price-2">
-					<label class="custom-control-label" for="price-2">1.000.000-3.000.000</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" id="price-3">
-					<label class="custom-control-label" for="price-3">Trên 3.000.000</label>
-				</div>
-			</div>
 			<div class="product-sidebar-widget">
 				<a href="#" class="btn btn-outline-light">Hủy bộ lọc</a>
 			</div>
@@ -210,6 +196,28 @@
 <script src="vendor/slimscroll/jquery.slimscroll.js"></script>
 <!-- main js -->
 <script src="javascripts/main-js.js"></script>
+
+<script>
+	$('.pagination .page-item')[0].click(function() {
+		dc.loadMoreNew(1);
+	});
+
+	$('.pagination .page-item')[1].click(function() {
+		dc.loadMoreNew(2);
+	});
+
+	$('.pagination .page-item')[2].click(function() {
+		dc.loadMoreNew(3);
+	});
+
+	$('.pagination .page-item')[3].click(function() {
+		dc.loadMoreNew(4);
+	});
+
+	$('.pagination .page-item')[4].click(function() {
+		dc.loadMoreNew(5);
+	});
+</script>
 </body>
 
 </html>

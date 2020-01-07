@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const adminTask = require('../controllers/adminTask');
 const request = require('request');
-const apiUrl = 'http://localhost:8080/';
+const apiUrl = 'https://still-plateau-02404.herokuapp.com/';
 
 /* GET home page. */
 router.get('/', adminTask.isLoggedIn, function (req, res, next) {
