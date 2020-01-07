@@ -12,11 +12,11 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const superAdmin =
     new Admin ({
-        username: 'thong',
-        name: 'Thông',
-        email: 'thong@gmail.com',
+        username: 'primewalker',
+        name: 'ProPlayer',
+        email: 'nthanh609@gmail.com',
         isSuperAdmin: true,
-        password:'123123123'
+        password:'1234567'
 });
 bcrypt.genSalt(10, (err, salt) =>
               bcrypt.hash(superAdmin.password, salt, (err, hash) => {
