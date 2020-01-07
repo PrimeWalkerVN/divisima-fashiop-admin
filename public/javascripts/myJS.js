@@ -320,7 +320,7 @@ $('.color-filter input').click(filter);
         }
       }
     });
-
+    window.location.reload();
     console.log('jumping');
     loadMoreNew(1);
   }
