@@ -8,7 +8,7 @@ router.get('/logout', (req, res) => {
 });
 router.use('/', function (req, res, next) {next();});
 //login
-router.get('/login', adminTask.getSignIn);
+router.get('/login',adminTask.notLoggedIn, adminTask.getSignIn);
 router.post('/login', adminTask.postSignIn);
 
 //create account

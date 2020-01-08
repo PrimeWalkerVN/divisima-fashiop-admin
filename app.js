@@ -36,7 +36,8 @@ app.set('view engine', 'hbs');
 app.use(session({
   secret: 'secret',
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: { maxAge: 24*60*60*1000}
 }));
 
 // passport middleware
