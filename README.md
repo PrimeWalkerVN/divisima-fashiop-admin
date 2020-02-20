@@ -1,4 +1,4 @@
-#Final project of Web application development course (School project)
+# Final project of Web application development course (School project)
 The website is at https://dackfashiop.herokuapp.com/ (Client site)
 
 And https://dackdivisima.herokuapp.com/ (Admin site), admin account by default is primewalker, password: 1234567
